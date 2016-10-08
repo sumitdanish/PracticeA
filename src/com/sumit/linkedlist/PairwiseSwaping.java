@@ -16,7 +16,7 @@ public class PairwiseSwaping {
 		cl.printList(n);
 		System.out.println();
 		PairwiseSwaping pa = new PairwiseSwaping();
-		Node n1 = pa.pairSwap(n);
+		Node n1 = pa.swap(n);
 		cl.printList(n1);
 	}
 
@@ -44,6 +44,30 @@ public class PairwiseSwaping {
 			l = list.getNext();
 		}
 		return node;
+	}
+	
+	
+	public Node swap(Node head){
+		Node list = head;
+		Node curr = list;
+		Node p = null;
+		while(curr.getNext() != null){
+			Node temp = curr.getNext();
+			if(curr == head){
+				curr.setNext(temp.getNext());
+				temp.setNext(curr);
+				temp = curr;
+				head = temp;
+			}else{
+				p.setNext(temp);
+				curr.setNext(temp.getNext());
+				temp.setNext(curr);
+				
+			}
+			p = curr;
+			curr = curr.getNext();
+		}
+		return list;
 	}
 
 }

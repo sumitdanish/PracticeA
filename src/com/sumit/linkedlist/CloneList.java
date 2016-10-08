@@ -1,6 +1,8 @@
 package com.sumit.linkedlist;
 
 import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CloneList {
 
@@ -19,7 +21,8 @@ public class CloneList {
 		cl.printList(n);
 		System.out.println();
 		CloneList clo = new CloneList();
-		Node clone = clo.copyLinkedList(n);
+		Node clone = clo.cloneLinkedListMap(n);
+		System.out.println(clone.getRandom().getData());
 		cl.printList(clone);
 		
 		
@@ -35,6 +38,7 @@ public class CloneList {
 			temp.setNext(t);
 			nCurr = nCurr.getNext().getNext();
 		}
+		
 		nCurr = curr;
 		while(nCurr != null){
 			nCurr.getNext().setRandom(nCurr.getRandom().getNext());
@@ -48,5 +52,25 @@ public class CloneList {
 			nCurr = nCurr.getNext();
 		}
 		return nCopy;
+	}
+	
+	public Node cloneLinkedListMap(Node head){
+		Node list = head;
+		Node l = list;
+		Node clone = null;
+		Map<Node,Node> map = new HashMap<Node,Node>();
+		while(l != null){
+			clone = new Node(l.getData());
+			map.put(l, clone);
+			l = l.getNext();
+		}
+		l = list;
+		while(l != null){
+			clone = map.get(l);
+			clone.setNext(map.get(l.getNext()));
+			clone.setRandom(map.get(l.getRandom()));
+			l = l.getNext();
+		}
+		return map.get(head);
 	}
 }

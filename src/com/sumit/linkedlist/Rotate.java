@@ -7,7 +7,7 @@ public class Rotate {
 	public static void main(String[] args) throws NumberFormatException, FileNotFoundException {
 		// TODO Auto-generated method stub
 		CreateList cl = new CreateList();
-		Node n = new Node();
+		Node n = null;
 		Rotate r = new Rotate();
 		for(String s : FIleUtil.getValue("ll.txt")){
 			n = cl.createList(n, Integer.parseInt(s));

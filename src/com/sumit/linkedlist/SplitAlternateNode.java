@@ -12,7 +12,7 @@ public class SplitAlternateNode {
 			head = cl.createList(head, Integer.parseInt(s));
 		}
 		cl.printList(head);
-		new SplitAlternateNode().split(head, cl);
+		new SplitAlternateNode().split(head);
 	}
 
 	public void split(Node head, CreateList cl) {
@@ -61,6 +61,46 @@ public class SplitAlternateNode {
 			re1 = re1.getNext();
 		}
 
+	}
+
+	public void split(Node head) {
+		Node t = head;
+		Node t1 = head.getNext();
+		Node n = head;
+		Node n1 = null;
+		if (head.getNext() != null) {
+			n1 = head.getNext();
+		}
+		Node temp = n;
+		Node temp1 = n1;
+		while (t != null && t1 != null) {
+
+			if (t.getNext() != null && t.getNext().getNext() != null) {
+				t = t.getNext().getNext();
+				n.setNext(t);
+				n = n.getNext();
+				
+			} else {
+				n.setNext(null);
+				t = t.getNext();
+			}
+
+			if (t1.getNext() != null && t1.getNext().getNext() != null) {
+				t1 = t1.getNext().getNext();
+				n1.setNext(t1);
+				n1 = n1.getNext();
+				
+			} else {
+				n1.setNext(null);
+				t1 = t1.getNext();
+			}
+
+		}
+		System.out.println();
+		while (temp1 != null) {
+			System.out.print(temp1.getData() + ",");
+			temp1 = temp1.getNext();
+		}
 	}
 
 }

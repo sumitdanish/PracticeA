@@ -14,7 +14,7 @@ public class DeleteAlternateNode {
 		}
 		cl.printList(head);
 		System.out.println();
-		Node n = d.result(head);
+		Node n = d.list(head);
 		cl.printList(n);
 	}
 
@@ -37,8 +37,18 @@ public class DeleteAlternateNode {
 				pre.setNext(null);
 			}
 		}
-		
 		return list;
+	}
+	
+	public Node list(Node head){
+		Node list = head;
+		Node temp = list;
+		while(list != null && list.getNext() != null){
+			Node list1 = list.getNext().getNext();
+			list.setNext(list1);
+			list = list1;
+		}
+		return temp;
 	}
 	
 	
