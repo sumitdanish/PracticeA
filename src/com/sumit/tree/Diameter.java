@@ -16,6 +16,7 @@ public class Diameter {
 			int data = Integer.parseInt(s);
 			tn = ct.createTree(tn, data);
 		}
+		//System.out.println(tn.getLeft().getData());
 		System.out.println(new Diameter().diameter(tn));
 	}
 

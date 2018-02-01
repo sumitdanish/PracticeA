@@ -19,6 +19,7 @@ public class SwapNode {
 		System.out.println();
 		s.getSwapNode(5);
 		cl.printList(head);
+		//System.out.println(7%2);
 	}
 
 	public void getSwapNode(int val) {

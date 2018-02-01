@@ -13,9 +13,9 @@ public class NextMinOfGivenElement {
 
 	
 	public int nextMin(int[] a,int key){
-		int min_of_max = Integer.MAX_VALUE;
+		int min_of_max = Integer.MIN_VALUE;
 		for(int i = 0; i <a.length ; i++){
-			if(a[i] > key && min_of_max > a[i]){
+			if(a[i] < key && min_of_max < a[i]){
 				min_of_max = a[i];
 			}
 		}

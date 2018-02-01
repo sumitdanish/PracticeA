@@ -5,16 +5,19 @@ public class KMP {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		KMP k = new KMP();
-		String pattern = "abcaby";
+		String pattern = "igg";
 		String input = "abxabcabcaby";
-		k.match(input, pattern);
-		
+		for(int l : new KMP().lps(pattern)){
+			System.out.print(l+",");
+		}
+		//k.match(input, pattern);	
 	}
 
 	public void match(String input,String pattern){
 		int i = 0;
 		int j = 0;
 		int[] lp = lps(pattern);
+		
 		while(i < input.length()){
 			if(input.charAt(i) == pattern.charAt(j)){
 				j++;

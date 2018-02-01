@@ -8,17 +8,19 @@ import java.util.Stack;
 public class DFSInAdjList {
 
 	public static void main(String[] args) throws FileNotFoundException {
+		String s = "\"";
+		System.out.println(s.replace("\"", "\\\""));
 		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(new File("dfs.txt"));
-		int size = Integer.parseInt(sc.nextLine());
-		GraphNodeList gl = new GraphNodeList(size);
-		while (sc.hasNext()) {
-			String[] s = sc.nextLine().split(",");
-			gl.addGraphNode(Integer.parseInt(s[0]), Integer.parseInt(s[1]));
-		}
-
-		GraphNode[] glist = gl.graphList();
-		 gl.dfs1(0, glist);
+//		Scanner sc = new Scanner(new File("dfs.txt"));
+//		int size = Integer.parseInt(sc.nextLine());
+//		GraphNodeList gl = new GraphNodeList(size);
+//		while (sc.hasNext()) {
+//			String[] s = sc.nextLine().split(",");
+//			gl.addGraphNode(Integer.parseInt(s[0]), Integer.parseInt(s[1]));
+//		}
+//
+//		GraphNode[] glist = gl.graphList();
+//		 gl.dfs1(0, glist);
 	}
 
 }

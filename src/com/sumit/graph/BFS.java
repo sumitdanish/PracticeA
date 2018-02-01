@@ -19,7 +19,7 @@ public class BFS {
 			gl.addEadge(Integer.parseInt(s[0]), Integer.parseInt(s[1]));
 		}
 		GraphNode1[] g = gl.getGraphList();
-		gl.bfs(1, g);
+		gl.bfs(2, g);
 	}
 }
 class GraphNodeList1{

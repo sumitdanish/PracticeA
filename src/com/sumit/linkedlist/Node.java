@@ -9,6 +9,7 @@ public class Node {
 	private Node nextGreater;
 	private Node down;
 	private Node child;
+	private Node arbitNext;
 	private int x;
 	private int y;
 	public Node(){
@@ -78,6 +79,12 @@ public class Node {
 	}
 	public void setChild(Node child) {
 		this.child = child;
+	}
+	public Node getArbitNext() {
+		return arbitNext;
+	}
+	public void setArbitNext(Node arbitNext) {
+		this.arbitNext = arbitNext;
 	}
 
 	

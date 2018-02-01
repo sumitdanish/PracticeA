@@ -21,14 +21,8 @@ public class FindPath {
 			gl.addEadge(Integer.parseInt(s[0]), Integer.parseInt(s[1]));
 		}
 		Map<Integer,GraphNode> g = gl.getMapList();
-		//FindPath f = new FindPath();
 		boolean b = gl.isPath(g, 3, 0);
 		System.out.println(b);
-//		GraphNode g1 = g.get(0);
-//		while(g1 != null){
-//			System.out.print(g1.getData()+",");
-//			g1 = g1.getNext();
-//		}
 	}
 
 }
